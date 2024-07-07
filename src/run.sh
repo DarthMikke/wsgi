@@ -32,7 +32,7 @@ fi
 # Scenarios:
 # 1. Run fastwsgi
 if [ $1 == "production" ]; then
-  fastwsgi -a $ASGI_APPLICATION $@
+  fastwsgi $ASGI_APPLICATION $@
   exit $?
 fi
 
