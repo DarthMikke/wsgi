@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CWD=$(pwd | sed 's/\//\n/g' | tail -n 1)
+
+if [ $CWD == "scripts" ]
+then
+	cd ..
+fi
+
+docker build -t ghcr.io/darthmikke/wsgi:$(git log -n 1 --format="%h") src
