@@ -13,17 +13,19 @@ ASGI_APPLICATION="asgi:main"
 fi
 
 echo Configuration:
-echo VENV: $VENV
+# echo VENV: $VENV
 echo APP_DIR: $APP_DIR
 echo ASGI_APPLICATION: $ASGI_APPLICATION
 
-echo "Activating venv..."
-python3 -m venv $VENV
-source $VENV/bin/activate
+# echo "Activating venv..."
+# if [ ! -d $VENV ]; then
+#   python3 -m venv $VENV
+# fi
+# source $VENV/bin/activate
 
 cd $APP_DIR
 
-pip install -r requirements.txt
+pip install --root-user-action=ignore -r requirements.txt
 
 if [ $1 == "install" ]; then
   exit $?
