@@ -37,9 +37,9 @@ if [ $1 == "install" ]; then
 fi
 
 # Scenarios:
-# 1. Run fastwsgi
+# 1. Run the ASGI server
 if [ $1 == "production" ]; then
-  fastwsgi $ASGI_APPLICATION ${@:2}
+  python3 -m uvicorn $ASGI_APPLICATION ${@:2}
   exit $?
 fi
 
