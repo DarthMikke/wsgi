@@ -14,4 +14,4 @@ WORKDIR /app
 ENTRYPOINT [ "/run.sh" ]
 CMD [ "production" ]
 
-EXPOSE 5000
+EXPOSE 8000
