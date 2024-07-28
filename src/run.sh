@@ -25,6 +25,11 @@ echo ASGI_APPLICATION: $ASGI_APPLICATION
 
 cd $APP_DIR
 
+# Need to do this to account for the way Python
+# resolves imports.
+# @link https://docs.python.org/3/library/sys.html#sys.path
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
 pip install --root-user-action=ignore -r requirements.txt
 
 if [ $1 == "install" ]; then
