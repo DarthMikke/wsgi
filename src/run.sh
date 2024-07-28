@@ -39,7 +39,7 @@ fi
 # Scenarios:
 # 1. Run the ASGI server
 if [ $1 == "production" ]; then
-  python3 -m uvicorn $ASGI_APPLICATION ${@:2}
+  python3 -m uvicorn --host 0.0.0.0 ${@:2} $ASGI_APPLICATION
   exit $?
 fi
 
