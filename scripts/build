@@ -7,4 +7,7 @@ then
 	cd ..
 fi
 
-docker build -t ghcr.io/darthmikke/wsgi:$(git log -n 1 --format="%h") src
+TAG=ghcr.io/darthmikke/wsgi:$(git log -n 1 --format="%h")
+
+docker build -t $TAG src
+echo "Built $TAG"
