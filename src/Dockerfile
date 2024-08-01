@@ -1,6 +1,6 @@
 FROM alpine:3.18
 
-LABEL org.opencontainers.image.source https://github.com/DarthMikke/wsgi
+LABEL org.opencontainers.image.source=https://github.com/DarthMikke/wsgi
 
 RUN apk add openssh git bash python3 py3-pip gcc python3-dev musl-dev
 RUN pip3 install uvicorn
