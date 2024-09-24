@@ -17,11 +17,8 @@ echo Configuration:
 echo APP_DIR: $APP_DIR
 echo ASGI_APPLICATION: $ASGI_APPLICATION
 
-# echo "Activating venv..."
-# if [ ! -d $VENV ]; then
-#   python3 -m venv $VENV
-# fi
-# source $VENV/bin/activate
+echo "Activating venv..."
+source /venv/bin/activate
 
 cd $APP_DIR
 
@@ -30,7 +27,9 @@ cd $APP_DIR
 # @link https://docs.python.org/3/library/sys.html#sys.path
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 
-pip install --root-user-action=ignore -r requirements.txt
+if [ -f requirements.txt ]; then
+  pip install -r requirements.txt
+fi
 
 if [ $1 == "install" ]; then
   exit $?
