@@ -9,5 +9,5 @@ fi
 
 TAG=ghcr.io/darthmikke/wsgi:$(git log -n 1 --format="%h")
 
-docker build -t $TAG src
+docker build $@ -t $TAG src
 echo "Built $TAG"
